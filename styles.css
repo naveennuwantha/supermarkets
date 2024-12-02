@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     display: flex;
     justify-content: center;
@@ -10,6 +11,8 @@ body {
 .image-container {
     display: flex;
     gap: 10px; /* Spacing between images */
+    flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+    justify-content: center;
 }
 
 .image-container img {
@@ -22,4 +25,16 @@ body {
 
 .image-container img:hover {
     border-color: #3498db; /* Add border color on hover */
+}
+
+/* Mobile Optimization */
+@media screen and (max-width: 600px) {
+    .image-container img {
+        width: 100%; /* Full width for smaller screens */
+        max-width: 300px; /* Optional: set max width */
+    }
+
+    .image-container {
+        gap: 5px; /* Reduce gap between images */
+    }
 }
